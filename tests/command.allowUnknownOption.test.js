@@ -92,4 +92,28 @@ describe('allowUnknownOption', () => {
       program.parse(['node', 'test', 'sub', '-m']);
     }).not.toThrow();
   });
+
+  test('when specify unknown program option and allowUnknownOption then unknown option parsed as operand', () => {
+    const program = new commander.Command();
+    program
+      .allowUnknownOption();
+    const result = program.parseOptions(['-m']);
+    expect(result).toEqual({ operands: ['-m'], unknown: [], displayHelp: false });
+  });
+
+  test('when specify only unknown program option and allowUnknownOption and program has subcommands and no action handler then display help', () => {
+    const program = new commander.Command();
+    program
+      .configureHelp({ formatHelp: () => '' })
+      .exitOverride()
+      .allowUnknownOption()
+      .command('foo');
+    let caughtErr;
+    try {
+      program.parse(['--unknown'], { from: 'user' });
+    } catch (err) {
+      caughtErr = err;
+    }
+    expect(caughtErr.code).toEqual('commander.help');
+  });
 });
