@@ -27,4 +27,4 @@ Once reach final (leaf) command:
   * call or chain `postAction` hooks[^1]
 </details>
 
-[^1]: output a warning suggesting use of `parseAsync()` when parsing with `parse()` and a thenable is returned, unless `process.env.NODE_ENV === 'production'`
+[^1]: output a warning suggesting use of `parseAsync()` when parsing with `parse()` and a thenable is returned
