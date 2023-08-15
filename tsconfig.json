@@ -3,11 +3,11 @@
     TypeScript is being used to do type checking across both JavaScript and TypeScript file.
     In particular, this picks up some problems in the JSDoc in the JavaScript files, and validates the code
     is consistent with the JSDoc.
-     
+
     A complication is that TypeScript does not directly support different config for .ts/.js. To avoid drowning
     in strict errors that are tedious to avoid in JavaScript the settings here are not strict. There is a
     another config with strict settings for opt-in use.
-     
+
     The settings here are used by VSCode, and TypeScript checks are enabled in included JavaScript files.
     eslint supports custom config and uses the strict settings for TypeScript files.
     To strictly check the published type definitions, there is a one script using the strict settings.
@@ -15,12 +15,10 @@
   /* Visit https://aka.ms/tsconfig to read more about tsconfig configuration. */
   "compilerOptions": {
     "module": "commonjs",
-    "lib": [
-        "es6"
-    ],
-    
+    "target": "es2019",
+
     /* less strict settings to avoid excessive work in JavaScript */
-    "noImplicitAny": false, 
+    "noImplicitAny": false,
     "noImplicitThis": false,
     "strictNullChecks": false,
 
