@@ -17,10 +17,10 @@
     "module": "commonjs",
     "target": "es2019",
 
+    "strict": true,
     /* less strict settings to avoid excessive work in JavaScript */
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "strictNullChecks": false,
 
     "types": [
       "node",
