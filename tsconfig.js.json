@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    /* less strict settings to avoid excessive work in JavaScript */
+    "noImplicitAny": false,
+    "noImplicitThis": false
+  },
+  "include": [
+    "*.js",
+    "*.mjs",
+    "lib/**/*.js"
+  ]
+}

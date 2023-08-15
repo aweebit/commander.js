@@ -1,0 +1,21 @@
+{
+  /*
+    This file is only to be used for type checks performed by the text editor.
+    It is named jsconfig.json rather than tsconfig.json to prevent thoughtless plain tsc runs.
+    Use npm run typecheck for correct typechecking instead.
+
+    Despite the fact the config file for JS is extended here,
+    the ./typings/tsconfig.json file is used by VS Code in ./typings.
+
+    However, tsc ignores config files in subdirectories, so two separate tsc runs are required
+    if a strict check of files in ./typings (and possibly other TypeScript files) is desired.
+  */
+  "extends": "./tsconfig.js.json",
+  "include": [
+    "*.js",
+    "*.mjs",
+    "lib/**/*.js",
+    "**/*.ts",
+    "**/*.mts"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  /* Visit https://aka.ms/tsconfig to read more about tsconfig configuration. */
+  "compilerOptions": {
+    "noEmit": true, /* just type checking and not emitting transpiled files */
+    "forceConsistentCasingInFileNames": true,
+
+    "target": "es2019",
+    "types": [
+      "node",
+      "jest"
+    ],
+
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": true,
+
+    "strict": true
+  }
+}

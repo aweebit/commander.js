@@ -24,9 +24,10 @@
     "lint:typescript": "eslint typings/*.ts tests/*.ts",
     "test": "jest && npm run check-types-strict",
     "test-esm": "node ./tests/esm-imports-test.mjs",
-    "check-types-strict": "tsd && tsc -p tsconfig.strict.json",
-    "check-types-loose": "tsc",
-    "test-all": "npm run test && npm run lint && npm run check-types-loose && npm run test-esm"
+    "typecheck-ts": "tsc -p tsconfig.ts.json",
+    "typecheck-js": "tsc -p tsconfig.js.json",
+    "typecheck": "npm run typecheck-ts && npm run typecheck-js",
+    "test-all": "npm run test && npm run lint && npm run typecheck && npm run test-esm"
   },
   "files": [
     "index.js",
